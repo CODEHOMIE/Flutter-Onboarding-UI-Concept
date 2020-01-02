@@ -6,6 +6,8 @@ A conceptual design for on boarding screens for mobile apps. This app provides y
 
 Video Preview: http://bit.ly/2SF79c6
 
+Live Coding Video: http://bit.ly/2QgrZgg
+
 Android Demo APK: http://bit.ly/2Q6eD67
 
 Just incase you liked this then you might want to check this one out: http://bit.ly/2SziCts
