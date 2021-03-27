@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SlideDots extends StatelessWidget {
-  bool isActive;
+  final bool isActive;
   SlideDots(this.isActive);
 
   @override
