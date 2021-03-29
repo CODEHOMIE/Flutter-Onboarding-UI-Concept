@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SlideDots extends StatelessWidget {
-  bool isActive;
+  final bool isActive;
   SlideDots(this.isActive);
 
   @override
@@ -14,7 +14,15 @@ class SlideDots extends StatelessWidget {
       width: isActive ? 10 : 6,
       decoration: BoxDecoration(
         color: isActive ? Colors.white : Colors.grey,
-        border: isActive ?  Border.all(color: Color(0xff927DFF),width: 2.0,) : Border.all(color: Colors.transparent,width: 1,),
+        border: isActive
+            ? Border.all(
+                color: Color(0xff927DFF),
+                width: 2.0,
+              )
+            : Border.all(
+                color: Colors.transparent,
+                width: 1,
+              ),
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
