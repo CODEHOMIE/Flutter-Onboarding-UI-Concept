@@ -1,6 +1,6 @@
 {
-    "name": "onboarding_ui",
-    "short_name": "onboarding_ui",
+    "name": "flutter_onboarding_ui_concept",
+    "short_name": "flutter_onboarding_ui_concept",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
