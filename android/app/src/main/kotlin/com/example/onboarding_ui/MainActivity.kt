@@ -1,4 +1,4 @@
-package com.example.flutter_onboarding_ui_concept
+package com.example.onboarding_ui
 
 import io.flutter.embedding.android.FlutterActivity
 
