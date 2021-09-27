@@ -1,21 +1,27 @@
 import 'package:flutter/cupertino.dart';
 
 class CustomFont extends StatelessWidget {
-final inputText, fontSize, fontType;
-final fontWeight;
+  final String? inputText, fontType;
+  final double? fontSize;
+  final FontWeight? fontWeight;
 
-CustomFont({this.inputText, this.fontSize, this.fontType, this.fontWeight});
+  const CustomFont({
+    Key? key,
+    this.fontType,
+    this.fontSize,
+    this.fontWeight,
+    this.inputText,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      inputText,
+      inputText!,
       style: TextStyle(
-            fontFamily: fontType,
-            fontWeight: fontWeight, 
-            fontSize: fontSize,
-          ),
+        fontFamily: fontType,
+        fontWeight: fontWeight,
+        fontSize: fontSize,
+      ),
     );
   }
-  
 }
