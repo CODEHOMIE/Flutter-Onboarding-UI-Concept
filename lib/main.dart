@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget{
       title: '',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        platform: TargetPlatform.iOS, 
+        primarySwatch: Colors.blue
       ),
       home: LandingPage(),
     );
