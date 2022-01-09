@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_onboarding_ui_concept/constants/constants.dart';
+import 'package:flutter_onboarding_ui_concept/generated/i18n.dart';
 import 'package:flutter_onboarding_ui_concept/model/slider.dart';
 
 class SlideItem extends StatelessWidget {
@@ -8,6 +9,20 @@ class SlideItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sliderArrayList = [
+      Slider(
+          sliderImageUrl: 'assets/images/slider_1.png',
+          sliderHeading: S.of(context).sliderHeading1,
+          sliderSubHeading: S.of(context).sliderSubHeading1),
+      Slider(
+          sliderImageUrl: 'assets/images/slider_2.png',
+          sliderHeading: S.of(context).sliderHeading2,
+          sliderSubHeading: S.of(context).sliderSubHeading2),
+      Slider(
+          sliderImageUrl: 'assets/images/slider_3.png',
+          sliderHeading: S.of(context).sliderHeading3,
+          sliderSubHeading: S.of(context).sliderSubHeading3),
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,

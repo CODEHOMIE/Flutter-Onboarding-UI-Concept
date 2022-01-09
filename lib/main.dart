@@ -2,7 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_onboarding_ui_concept/screens/landing_page.dart';
+
+import 'generated/i18n.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,6 +30,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white),
       darkTheme:
           ThemeData(brightness: Brightness.dark, backgroundColor: Colors.black),
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       home: LandingPage(),
     );
   }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_onboarding_ui_concept/constants/constants.dart';
+import 'package:flutter_onboarding_ui_concept/generated/i18n.dart';
 import 'package:flutter_onboarding_ui_concept/model/slider.dart';
 import 'package:flutter_onboarding_ui_concept/widgets/slide_dots.dart';
 import 'package:flutter_onboarding_ui_concept/widgets/slide_items/slide_item.dart';
@@ -52,7 +53,7 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                   scrollDirection: Axis.horizontal,
                   controller: _pageController,
                   onPageChanged: _onPageChanged,
-                  itemCount: sliderArrayList.length,
+                  itemCount: 3,
                   itemBuilder: (ctx, i) => SlideItem(i),
                 ),
                 Stack(
@@ -64,7 +65,7 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                         padding: EdgeInsets.only(right: 15.0, bottom: 15.0),
                         child: GestureDetector(
                           child: Text(
-                            _currentPage < 2 ? Constants.NEXT : Constants.GET_STARTED,
+                            _currentPage < 2 ? S.of(context).next : S.of(context).getStarted,
                             style: TextStyle(
                               fontFamily: Constants.OPEN_SANS,
                               fontWeight: FontWeight.w600,
@@ -90,7 +91,7 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                           visible: _currentPage < 2,
                           child: GestureDetector(
                             child: Text(
-                              Constants.SKIP,
+                              S.of(context).skip,
                               style: TextStyle(
                                 fontFamily: Constants.OPEN_SANS,
                                 fontWeight: FontWeight.w600,
@@ -111,7 +112,7 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          for (int i = 0; i < sliderArrayList.length; i++)
+                          for (int i = 0; i < 3; i++)
                             if (i == _currentPage)
                               SlideDots(true)
                             else
