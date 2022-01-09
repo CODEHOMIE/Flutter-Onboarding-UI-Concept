@@ -62,13 +62,23 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                       alignment: Alignment.bottomRight,
                       child: Padding(
                         padding: EdgeInsets.only(right: 15.0, bottom: 15.0),
-                        child: Text(
-                          Constants.NEXT,
-                          style: TextStyle(
-                            fontFamily: Constants.OPEN_SANS,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14.0,
+                        child: GestureDetector(
+                          child: Text(
+                            _currentPage < 2 ? Constants.NEXT : Constants.GET_STARTED,
+                            style: TextStyle(
+                              fontFamily: Constants.OPEN_SANS,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.0,
+                            ),
                           ),
+                          onTap: () {
+                            if(_pageController.page.toInt() < 2){
+                              _pageController.nextPage(duration: Duration(
+                                  milliseconds: 200), curve: Curves.easeIn);
+                            } else {
+                              Navigator.pushReplacementNamed(context, '/homepage');
+                            }
+                          },
                         ),
                       ),
                     ),
@@ -76,12 +86,21 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
                       alignment: Alignment.bottomLeft,
                       child: Padding(
                         padding: EdgeInsets.only(left: 15.0, bottom: 15.0),
-                        child: Text(
-                          Constants.SKIP,
-                          style: TextStyle(
-                            fontFamily: Constants.OPEN_SANS,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14.0,
+                        child: Visibility(
+                          visible: _currentPage < 2,
+                          child: GestureDetector(
+                            child: Text(
+                              Constants.SKIP,
+                              style: TextStyle(
+                                fontFamily: Constants.OPEN_SANS,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14.0,
+                              ),
+                            ),
+                            onTap: () {
+                              _pageController.animateToPage(2, duration: Duration(
+                                  milliseconds: 200), curve: Curves.easeIn);
+                            },
                           ),
                         ),
                       ),
